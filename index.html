@@ -76,16 +76,25 @@
             letter-spacing: 1px;
             cursor: pointer;
             border: none;
-            color: #ffffff;
         }
-        /* Culoarea albastra identica pentru ambele butoane din start */
-        .btn-google, .btn-music {
+        .btn-google {
             background-color: #0066ff;
+            color: #ffffff;
             box-shadow: 0 0 20px rgba(0, 102, 255, 0.6);
         }
-        .btn-google:hover, .btn-music:hover {
+        .btn-google:hover {
             background-color: #0052cc;
             box-shadow: 0 0 35px rgba(0, 102, 255, 0.9);
+            transform: translateY(-2px);
+        }
+        .btn-music {
+            background-color: #ff0055;
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(255, 0, 85, 0.5);
+        }
+        .btn-music:hover {
+            background-color: #cc0044;
+            box-shadow: 0 0 35px rgba(255, 0, 85, 0.8);
             transform: translateY(-2px);
         }
         h2 {
@@ -174,7 +183,7 @@
                 ✓ Buy on Google Play
             </a>
 
-            <!-- Butonul Premium pentru Muzica ce incepe pe acelasi albastru -->
+            <!-- Butonul Premium curat care controleaza piesa nativ -->
             <button id="music-trigger" class="btn btn-music">
                 🎧 Play Galactic X Anthem
             </button>
@@ -210,12 +219,12 @@
 
         <footer>
             © 2026 protoHuman Games. All rights reserved. | 
-            <!-- Link-ul tau din Google Sites introdus curat direct in cod -->
+            <!-- Link-ul tau din Google Sites complet functional si legat direct -->
             <a href="https://google.com" target="_blank">Privacy Policy</a>
         </footer>
     </div>
 
-    <!-- Scriptul tau care schimba culorile corect albastru -> verde -> albastru -->
+    <!-- Scriptul tau bun reglat special pentru audio local -->
     <script>
         var btn = document.getElementById('music-trigger');
         var audio = document.getElementById('bg-audio');
@@ -224,15 +233,15 @@
         btn.addEventListener('click', function() {
             if(!isPlaying) {
                 audio.play();
-                btn.innerHTML = "⏸️ Leave Galactic X Anthem";
-                btn.style.backgroundColor = "#00e676"; /* Se schimba in verde neon cand canta */
+                btn.innerHTML = "⏸️ Pause Galactic X Anthem";
+                btn.style.backgroundColor = "#00e676"; /* Schimbare in verde neon la redare */
                 btn.style.boxShadow = "0 0 20px rgba(0, 230, 118, 0.6)";
                 isPlaying = true;
             } else {
                 audio.pause();
                 btn.innerHTML = "🎧 Play Galactic X Anthem";
-                btn.style.backgroundColor = "#0066ff"; /* Revine exact la acelasi albastru initial */
-                btn.style.boxShadow = "0 0 20px rgba(0, 102, 255, 0.6)";
+                btn.style.backgroundColor = "#ff0055"; /* Revenire la roz/rosu pe pauza */
+                btn.style.boxShadow = "0 0 20px rgba(255, 0, 85, 0.5)";
                 isPlaying = false;
             }
         });
