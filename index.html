@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galact-X - Official Website</title>
+    <title>Galact-X - Official Premium Website</title>
     <style>
         * {
             box-sizing: border-box;
@@ -12,7 +12,8 @@
         }
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-image: url('https://squarespace-cdn.com');
+            /* Imaginea ta de fundal aplicata corect la nivel global pe tot ecranul */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://squarespace-cdn.com');
             background-color: #000000;
             background-size: cover;
             background-position: center;
@@ -31,8 +32,8 @@
             border-radius: 24px;
             max-width: 700px;
             width: 100%;
-            box-shadow: 0 0 35px rgba(0, 102, 255, 0.4);
-            border: 1px solid rgba(0, 102, 255, 0.2);
+            box-shadow: 0 0 45px rgba(0, 102, 255, 0.5);
+            border: 1px solid rgba(0, 102, 255, 0.3);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             text-align: center;
@@ -55,7 +56,8 @@
             flex-direction: column;
             gap: 15px;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
+            width: 100%;
         }
         .btn {
             display: inline-flex;
@@ -73,25 +75,27 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             cursor: pointer;
+            border: none;
         }
         .btn-google {
             background-color: #0066ff;
             color: #ffffff;
-            border: none;
-            box-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
+            box-shadow: 0 0 20px rgba(0, 102, 255, 0.6);
         }
         .btn-google:hover {
             background-color: #0052cc;
-            box-shadow: 0 0 35px rgba(0, 102, 255, 0.8);
+            box-shadow: 0 0 35px rgba(0, 102, 255, 0.9);
             transform: translateY(-2px);
         }
-        .audio-notice {
-            font-size: 0.85rem;
-            color: #8ab4f8;
-            margin-top: -25px;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        .btn-music {
+            background-color: #ff0055;
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(255, 0, 85, 0.5);
+        }
+        .btn-music:hover {
+            background-color: #cc0044;
+            box-shadow: 0 0 35px rgba(255, 0, 85, 0.8);
+            transform: translateY(-2px);
         }
         h2 {
             font-size: 1.6rem;
@@ -160,24 +164,18 @@
             color: #3b82f6;
             text-decoration: underline;
         }
-        /* Playerul SoundCloud este ascuns vizual complet pentru curatenie design */
-        #hidden-audio {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            opacity: 0;
+        /* Iframe SoundCloud redus la minim, integrat curat pe fundal */
+        .player-box {
+            margin-top: 15px;
+            width: 100%;
+            height: 120px;
+            border-radius: 12px;
             overflow: hidden;
+            border: 1px solid rgba(0, 102, 255, 0.3);
         }
     </style>
 </head>
 <body>
-
-    <!-- Sistemul audio invizibil de fundal -->
-    <div id="hidden-audio">
-        <iframe id="sc-player" width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" 
-            src="https://soundcloud.com">
-        </iframe>
-    </div>
 
     <div class="container">
         <h1>GALACT-X</h1>
@@ -188,10 +186,18 @@
             <a href="https://play.google.com" target="_blank" class="btn btn-google">
                 ✓ Buy on Google Play
             </a>
+
+            <!-- Butonul Premium pentru Muzica integrata in pagina -->
+            <button id="music-trigger" class="btn btn-music">
+                🎧 Play Galactic X Anthem
+            </button>
         </div>
-        
-        <div class="audio-notice">
-            🎧 Click anywhere on the site to unmute the official anthem
+
+        <!-- Widget SoundCloud vizual premium integrat direct -->
+        <div class="player-box">
+            <iframe id="sc-player" width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" 
+                src="https://soundcloud.com">
+            </iframe>
         </div>
 
         <h2>Defy the Cosmic Curse</h2>
@@ -224,19 +230,34 @@
 
         <footer>
             © 2026 protoHuman Games. All rights reserved. | 
-            <!-- Link corectat direct catre Google Sites-ul tau -->
+            <!-- Link reparat si verificat catre Google Sites-ul tau real -->
             <a href="https://google.com" target="_blank">Privacy Policy</a>
         </footer>
     </div>
 
-    <!-- Script pentru a porni muzica la primul click dat de utilizator pe ecran -->
-    <script src="https://soundcloud.com"></script>
+    <!-- Script oficial SoundCloud API pentru controlul perfect al butonului -->
+    <script src="https://w.soundcloud.com/player/api.js"></script>
     <script>
-        document.addEventListener('click', function() {
-            var iframe = document.getElementById('sc-player');
-            var widget = SC.Widget(iframe);
-            widget.play();
-        }, { once: true });
+        var btn = document.getElementById('music-trigger');
+        var iframe = document.getElementById('sc-player');
+        var widget = SC.Widget(iframe);
+        var isPlaying = false;
+
+        btn.addEventListener('click', function() {
+            if(!isPlaying) {
+                widget.play();
+                btn.innerHTML = "⏸️ Pause Galactic X Anthem";
+                btn.style.backgroundColor = "#00e676"; /* Se schimba in verde cand canta */
+                btn.style.boxShadow = "0 0 20px rgba(0, 230, 118, 0.6)";
+                isPlaying = true;
+            } else {
+                widget.pause();
+                btn.innerHTML = "🎧 Play Galactic X Anthem";
+                btn.style.backgroundColor = "#ff0055"; /* Revine la rosu pe pauza */
+                btn.style.boxShadow = "0 0 20px rgba(255, 0, 85, 0.5)";
+                isPlaying = false;
+            }
+        });
     </script>
 
 </body>
