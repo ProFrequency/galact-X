@@ -50,9 +50,8 @@
             color: #b0c4de;
             margin-bottom: 35px;
             font-style: italic;
-            /* Modificat: Fortare aliniere pe centru pentru acest text */
+            /* Singura modificare: textul este acum perfect centrat */
             text-align: center;
-            width: 100%;
         }
         .btn-container {
             display: flex;
@@ -91,13 +90,13 @@
             transform: translateY(-2px);
         }
         .btn-music {
-            background-color: #0066ff;
+            background-color: #ff0055;
             color: #ffffff;
-            box-shadow: 0 0 20px rgba(0, 102, 255, 0.6);
+            box-shadow: 0 0 20px rgba(255, 0, 85, 0.5);
         }
         .btn-music:hover {
-            background-color: #0052cc;
-            box-shadow: 0 0 35px rgba(0, 102, 255, 0.9);
+            background-color: #cc0044;
+            box-shadow: 0 0 35px rgba(255, 0, 85, 0.8);
             transform: translateY(-2px);
         }
         h2 {
@@ -118,7 +117,7 @@
             margin-bottom: 15px;
         }
         .features-list {
-            text-align: center;
+            text-align: left;
             margin-bottom: 30px;
         }
         .feature-item {
@@ -127,7 +126,6 @@
             padding: 15px;
             border-radius: 10px;
             border-left: 3px solid #0066ff;
-            text-align: center;
         }
         .feature-item strong {
             color: #ffffff;
@@ -139,7 +137,6 @@
             margin-bottom: 0;
             font-size: 0.95rem;
             color: #cccccc;
-            text-align: center;
         }
         .screenshots-panel {
             background: rgba(0, 102, 255, 0.05);
@@ -169,6 +166,15 @@
             color: #3b82f6;
             text-decoration: underline;
         }
+        /* Iframe SoundCloud redus la minim, integrat curat pe fundal */
+        .player-box {
+            margin-top: 15px;
+            width: 100%;
+            height: 120px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 102, 255, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -187,6 +193,13 @@
             <a href="https://soundcloud.com" target="_blank" class="btn btn-music">
                 🎧 Play Galactic X Anthem
             </a>
+        </div>
+
+        <!-- Widget SoundCloud vizual premium integrat direct -->
+        <div class="player-box">
+            <iframe id="sc-player" width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" 
+                src="https://soundcloud.com">
+            </iframe>
         </div>
 
         <h2>The Mission</h2>
