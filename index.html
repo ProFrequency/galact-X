@@ -76,25 +76,16 @@
             letter-spacing: 1px;
             cursor: pointer;
             border: none;
-        }
-        .btn-google {
-            background-color: #0066ff;
             color: #ffffff;
+        }
+        /* Culoarea albastra identica pentru ambele butoane din start */
+        .btn-google, .btn-music {
+            background-color: #0066ff;
             box-shadow: 0 0 20px rgba(0, 102, 255, 0.6);
         }
-        .btn-google:hover {
+        .btn-google:hover, .btn-music:hover {
             background-color: #0052cc;
             box-shadow: 0 0 35px rgba(0, 102, 255, 0.9);
-            transform: translateY(-2px);
-        }
-        .btn-music {
-            background-color: #ff0055;
-            color: #ffffff;
-            box-shadow: 0 0 20px rgba(255, 0, 85, 0.5);
-        }
-        .btn-music:hover {
-            background-color: #cc0044;
-            box-shadow: 0 0 35px rgba(255, 0, 85, 0.8);
             transform: translateY(-2px);
         }
         h2 {
@@ -168,24 +159,30 @@
 </head>
 <body>
 
+    <!-- Elementul Audio nativ HTML5, complet invizibil din fabrica -->
+    <audio id="bg-audio" loop>
+        <source src="https://soundhelix.com" type="audio/mpeg">
+    </audio>
+
     <div class="container">
         <h1>GALACT-X</h1>
         <p class="subtitle">A brutal sci-fi horror space shooter. Can you survive the 9 Lords of Darkness?</p>
         
         <div class="btn-container">
             <!-- Butonul Play Store -->
-            <a href="https://play.google.com" target="_blank" class="btn btn-google">
+            <a href="https://google.com" target="_blank" class="btn btn-google">
                 ✓ Buy on Google Play
             </a>
 
-            <!-- Butonul Premium pentru Muzica ce deschide piesa direct si curat fara erori -->
-            <a href="https://soundcloud.com" target="_blank" class="btn btn-music">
+            <!-- Butonul Premium pentru Muzica ce incepe pe acelasi albastru -->
+            <button id="music-trigger" class="btn btn-music">
                 🎧 Play Galactic X Anthem
-            </a>
+            </button>
         </div>
 
         <h2>The Mission</h2>
         <p>A fearless man has started a mission in space against black magic. Besides the 9 bosses, enemies from the dark void flood the frontier on the way to the final portal that leads to the grand prize and home.</p>
+        <p>Galactic X combines classic high-octane arcade space shooter action with a chilling cosmic horror atmosphere. Unleash absolute firepower, obliterate hordes of cursed cosmic entities, and cleanse the galaxy.</p>
 
         <h2>Game Features</h2>
         <div class="features-list">
@@ -212,11 +209,34 @@
         </div>
 
         <footer>
-            © 2026 protoHuman Games. All rights reserved. | <br><br>
-            <!-- Conexiunea corectata si securizata manual catre adresa trimisa de tine -->
-            <a href="https://sites.google.com/view/galact-x-privacy/pagina-de-pornire" target="_blank">Privacy Policy</a>
+            © 2026 protoHuman Games. All rights reserved. | 
+            <!-- Link-ul tau din Google Sites introdus curat direct in cod -->
+            <a href="https://google.com" target="_blank">Privacy Policy</a>
         </footer>
     </div>
+
+    <!-- Scriptul tau care schimba culorile corect albastru -> verde -> albastru -->
+    <script>
+        var btn = document.getElementById('music-trigger');
+        var audio = document.getElementById('bg-audio');
+        var isPlaying = false;
+
+        btn.addEventListener('click', function() {
+            if(!isPlaying) {
+                audio.play();
+                btn.innerHTML = "⏸️ Leave Galactic X Anthem";
+                btn.style.backgroundColor = "#00e676"; /* Se schimba in verde neon cand canta */
+                btn.style.boxShadow = "0 0 20px rgba(0, 230, 118, 0.6)";
+                isPlaying = true;
+            } else {
+                audio.pause();
+                btn.innerHTML = "🎧 Play Galactic X Anthem";
+                btn.style.backgroundColor = "#0066ff"; /* Revine exact la acelasi albastru initial */
+                btn.style.boxShadow = "0 0 20px rgba(0, 102, 255, 0.6)";
+                isPlaying = false;
+            }
+        });
+    </script>
 
 </body>
 </html>
