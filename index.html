@@ -168,30 +168,24 @@
 </head>
 <body>
 
-    <!-- Elementul Audio nativ HTML5, complet invizibil din fabrica -->
-    <audio id="bg-audio" loop>
-        <source src="https://soundhelix.com" type="audio/mpeg">
-    </audio>
-
     <div class="container">
         <h1>GALACT-X</h1>
         <p class="subtitle">A brutal sci-fi horror space shooter. Can you survive the 9 Lords of Darkness?</p>
         
         <div class="btn-container">
             <!-- Butonul Play Store -->
-            <a href="https://google.com" target="_blank" class="btn btn-google">
+            <a href="https://play.google.com" target="_blank" class="btn btn-google">
                 ✓ Buy on Google Play
             </a>
 
-            <!-- Butonul Premium curat care controleaza piesa nativ -->
-            <button id="music-trigger" class="btn btn-music">
+            <!-- Butonul Premium pentru Muzica ce deschide piesa direct si curat fara erori -->
+            <a href="https://soundcloud.com" target="_blank" class="btn btn-music">
                 🎧 Play Galactic X Anthem
-            </button>
+            </a>
         </div>
 
         <h2>The Mission</h2>
         <p>A fearless man has started a mission in space against black magic. Besides the 9 bosses, enemies from the dark void flood the frontier on the way to the final portal that leads to the grand prize and home.</p>
-        <p>Galactic X combines classic high-octane arcade space shooter action with a chilling cosmic horror atmosphere. Unleash absolute firepower, obliterate hordes of cursed cosmic entities, and cleanse the galaxy.</p>
 
         <h2>Game Features</h2>
         <div class="features-list">
@@ -218,34 +212,11 @@
         </div>
 
         <footer>
-            © 2026 protoHuman Games. All rights reserved. | 
-            <!-- Link-ul tau din Google Sites complet functional si legat direct -->
-            <a href="https://google.com" target="_blank">Privacy Policy</a>
+            © 2026 protoHuman Games. All rights reserved. | <br><br>
+            <!-- Conexiunea corectata si securizata manual catre adresa trimisa de tine -->
+            <a href="https://sites.google.com/view/galact-x-privacy/pagina-de-pornire" target="_blank">Privacy Policy</a>
         </footer>
     </div>
-
-    <!-- Scriptul tau bun reglat special pentru audio local -->
-    <script>
-        var btn = document.getElementById('music-trigger');
-        var audio = document.getElementById('bg-audio');
-        var isPlaying = false;
-
-        btn.addEventListener('click', function() {
-            if(!isPlaying) {
-                audio.play();
-                btn.innerHTML = "⏸️ Pause Galactic X Anthem";
-                btn.style.backgroundColor = "#00e676"; /* Schimbare in verde neon la redare */
-                btn.style.boxShadow = "0 0 20px rgba(0, 230, 118, 0.6)";
-                isPlaying = true;
-            } else {
-                audio.pause();
-                btn.innerHTML = "🎧 Play Galactic X Anthem";
-                btn.style.backgroundColor = "#ff0055"; /* Revenire la roz/rosu pe pauza */
-                btn.style.boxShadow = "0 0 20px rgba(255, 0, 85, 0.5)";
-                isPlaying = false;
-            }
-        });
-    </script>
 
 </body>
 </html>
