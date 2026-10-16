@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galact-X - Official Website</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://squarespace-cdn.com');
+            background-color: #000000;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 40px 30px;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 0 30px rgba(0, 102, 255, 0.3);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 0 15px #0066ff, 0 0 30px #0066ff;
+        }
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            color: #e0e0e0;
+        }
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            max-width: 280px;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-google {
+            background-color: #0066ff;
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 102, 255, 0.5);
+        }
+        .btn-google:hover {
+            background-color: #0052cc;
+            box-shadow: 0 0 25px rgba(0, 102, 255, 0.8);
+            transform: translateY(-2px);
+        }
+        .btn-music {
+            background-color: transparent;
+            color: #0066ff;
+            border: 2px solid #0066ff;
+            box-shadow: 0 0 10px rgba(0, 102, 255, 0.2);
+        }
+        .btn-music:hover {
+            background-color: rgba(0, 102, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #888888;
+        }
+        footer a {
+            color: #0066ff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        footer a:hover {
+            color: #0052cc;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Galact-X</h1>
+        
+        <p class="description">
+            A fearless man has started a mission in space against black magic. Besides the 9 bosses, enemies from the dark void flood the frontier on the way to the final portal that leads to the grand prize and home.
+        </p>
+
+        <div class="btn-container">
+            <!-- Butonul Premium Google Play cu bifa ceruta -->
+            <a href="https://google.com" target="_blank" class="btn btn-google">
+                ✓ Buy on Google Play
+            </a>
+            
+            <!-- Butonul Premium pentru Muzica cu casti -->
+            <a href="https://soundcloud.com" target="_blank" class="btn btn-music">
+                🎧 Listen to Anthem
+            </a>
+        </div>
+
+        <footer>
+            © 2026 protoHuman Games. All rights reserved. <br><br>
+            <a href="https://google.com" target="_blank">Privacy Policy</a>
+        </footer>
+    </div>
+
+</body>
+</html>
