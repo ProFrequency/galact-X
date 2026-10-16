@@ -11,38 +11,39 @@
             padding: 0;
         }
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-image: url('https://squarespace-cdn.com');
+            font-family: 'Segoe UI', Arial, sans-serif;
+            /* Foloseste poza incarcata direct in proiectul tau GitHub */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background.png');
             background-color: #000000;
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            background-repeat: no-repeat;
             color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             min-height: 100vh;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
         .container {
             background-color: rgba(0, 0, 0, 0.85);
             padding: 40px 30px;
-            border-radius: 24px;
-            max-width: 700px;
+            border-radius: 20px;
+            max-width: 650px;
             width: 100%;
-            box-shadow: 0 0 35px rgba(0, 102, 255, 0.4);
-            border: 1px solid rgba(0, 102, 255, 0.2);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 0 30px rgba(0, 102, 255, 0.5);
+            border: 1px solid rgba(0, 102, 255, 0.3);
             text-align: center;
         }
         h1 {
-            font-size: 3.5rem;
-            letter-spacing: 6px;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            letter-spacing: 5px;
+            margin-bottom: 5px;
             text-transform: uppercase;
-            text-shadow: 0 0 15px #0066ff, 0 0 30px #0066ff;
+            color: #ffffff;
+            text-shadow: 0 0 10px #0066ff, 0 0 20px #0066ff;
         }
         .subtitle {
             font-size: 1.1rem;
@@ -55,7 +56,8 @@
             flex-direction: column;
             gap: 15px;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
+            width: 100%;
         }
         .btn {
             display: inline-flex;
@@ -63,41 +65,42 @@
             justify-content: center;
             gap: 10px;
             width: 100%;
-            max-width: 380px;
+            max-width: 350px;
             padding: 16px 30px;
             font-size: 1.1rem;
             font-weight: bold;
             text-decoration: none;
             border-radius: 50px;
-            transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
-            cursor: pointer;
+            transition: all 0.3s ease;
         }
         .btn-google {
             background-color: #0066ff;
             color: #ffffff;
-            border: none;
-            box-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
+            box-shadow: 0 0 15px rgba(0, 102, 255, 0.5);
         }
         .btn-google:hover {
             background-color: #0052cc;
-            box-shadow: 0 0 35px rgba(0, 102, 255, 0.8);
+            box-shadow: 0 0 25px rgba(0, 102, 255, 0.8);
             transform: translateY(-2px);
         }
-        .audio-notice {
-            font-size: 0.85rem;
-            color: #8ab4f8;
-            margin-top: -25px;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        .btn-music {
+            background-color: transparent;
+            color: #ff0055;
+            border: 2px solid #ff0055;
+            box-shadow: 0 0 15px rgba(255, 0, 85, 0.2);
+        }
+        .btn-music:hover {
+            background-color: rgba(255, 0, 85, 0.1);
+            box-shadow: 0 0 25px rgba(255, 0, 85, 0.6);
+            transform: translateY(-2px);
         }
         h2 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: #0066ff;
-            margin-top: 35px;
-            margin-bottom: 15px;
+            margin-top: 30px;
+            margin-bottom: 12px;
             text-align: left;
             border-bottom: 1px solid rgba(0, 102, 255, 0.3);
             padding-bottom: 5px;
@@ -110,35 +113,13 @@
             text-align: left;
             margin-bottom: 15px;
         }
-        .features-list {
-            text-align: left;
-            margin-bottom: 30px;
-        }
-        .feature-item {
-            margin-bottom: 15px;
-            background: rgba(255, 255, 255, 0.02);
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 3px solid #0066ff;
-        }
-        .feature-item strong {
-            color: #ffffff;
-            display: block;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-        .feature-item p {
-            margin-bottom: 0;
-            font-size: 0.95rem;
-            color: #cccccc;
-        }
         .screenshots-panel {
             background: rgba(0, 102, 255, 0.05);
-            padding: 25px;
+            padding: 20px;
             border-radius: 12px;
             border: 1px dashed rgba(0, 102, 255, 0.3);
-            margin-top: 35px;
-            margin-bottom: 20px;
+            margin-top: 30px;
+            margin-bottom: 10px;
             font-weight: bold;
             color: #b0c4de;
             letter-spacing: 1px;
@@ -154,30 +135,13 @@
             color: #0066ff;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.2s ease;
         }
         footer a:hover {
-            color: #3b82f6;
             text-decoration: underline;
-        }
-        /* Playerul SoundCloud este ascuns vizual complet pentru curatenie design */
-        #hidden-audio {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            opacity: 0;
-            overflow: hidden;
         }
     </style>
 </head>
 <body>
-
-    <!-- Sistemul audio invizibil de fundal -->
-    <div id="hidden-audio">
-        <iframe id="sc-player" width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" 
-            src="https://soundcloud.com">
-        </iframe>
-    </div>
 
     <div class="container">
         <h1>GALACT-X</h1>
@@ -185,59 +149,35 @@
         
         <div class="btn-container">
             <!-- Butonul Play Store -->
-            <a href="https://play.google.com" target="_blank" class="btn btn-google">
+            <a href="https://google.com" target="_blank" class="btn btn-google">
                 ✓ Buy on Google Play
             </a>
-        </div>
-        
-        <div class="audio-notice">
-            🎧 Click anywhere on the site to unmute the official anthem
+
+            <!-- Butonul curat pentru muzica ce deschide piesa instant -->
+            <a href="https://soundcloud.com" target="_blank" class="btn btn-music">
+                🎧 Play Galactic X Anthem
+            </a>
         </div>
 
-        <h2>Defy the Cosmic Curse</h2>
+        <h2>The Mission</h2>
         <p>A fearless man has started a mission in space against black magic. Besides the 9 bosses, enemies from the dark void flood the frontier on the way to the final portal that leads to the grand prize and home.</p>
-        <p>Galactic X combines classic high-octane arcade space shooter action with a chilling cosmic horror atmosphere. Unleash absolute firepower, obliterate hordes of cursed cosmic entities, and cleanse the galaxy.</p>
 
         <h2>Game Features</h2>
-        <div class="features-list">
-            <div class="feature-item">
-                <strong>Cosmic Horror Atmosphere</strong>
-                <p>Face terrifying, corrupted alien entities visualised through a dark and eerie sci-fi art style.</p>
-            </div>
-            <div class="feature-item">
-                <strong>9 Demonic Bosses</strong>
-                <p>Test your reflexes against 9 unique, massive, and unforgiving Bosses guarding the final gate of the cosmic curse.</p>
-            </div>
-            <div class="feature-item">
-                <strong>Pure Arcade Action</strong>
-                <p>Easy to learn, brutal to master. Chase the ultimate high score with fast-paced, adrenaline-pumping combat.</p>
-            </div>
-            <div class="feature-item">
-                <strong>Premium Experience</strong>
-                <p>No ads, no hidden paywalls. Just pure, uninterrupted space-horror action from start to finish.</p>
-            </div>
-        </div>
+        <p>• <strong>Cosmic Horror Atmosphere:</strong> Face terrifying, corrupted alien entities visualised through a dark and eerie sci-fi art style.</p>
+        <p>• <strong>9 Demonic Bosses:</strong> Test your reflexes against 9 unique, massive, and unforgiving Bosses guarding the final gate of the cosmic curse.</p>
+        <p>• <strong>Pure Arcade Action:</strong> Easy to learn, brutal to master. Chase the ultimate high score with fast-paced combat.</p>
+        <p>• <strong>Premium Experience:</strong> No ads, no hidden paywalls. Just pure, uninterrupted space-horror action from start to finish, completely safe for children.</p>
 
         <div class="screenshots-panel">
             📸 GAMEPLAY SCREENSHOTS & TRAILERS COMING SOON
         </div>
 
         <footer>
-            © 2026 protoHuman Games. All rights reserved. | 
-            <!-- Link corectat direct catre Google Sites-ul tau -->
+            © 2026 protoHuman Games. All rights reserved. | <br><br>
+            <!-- Link direct si curat scris de mana fara redirectionari -->
             <a href="https://google.com" target="_blank">Privacy Policy</a>
         </footer>
     </div>
-
-    <!-- Script pentru a porni muzica la primul click dat de utilizator pe ecran -->
-    <script src="https://soundcloud.com"></script>
-    <script>
-        document.addEventListener('click', function() {
-            var iframe = document.getElementById('sc-player');
-            var widget = SC.Widget(iframe);
-            widget.play();
-        }, { once: true });
-    </script>
 
 </body>
 </html>
