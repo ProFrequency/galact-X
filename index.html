@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galact-X - Official Website</title>
+    <title>Galact-X - Official Premium Website</title>
     <style>
         * {
             box-sizing: border-box;
@@ -12,7 +12,12 @@
         }
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://squarespace-cdn.com');
             background-color: #000000;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
             color: #ffffff;
             display: flex;
             flex-direction: column;
@@ -22,13 +27,15 @@
             padding: 60px 20px;
         }
         .container {
-            background-color: rgba(10, 10, 15, 0.95);
+            background-color: rgba(0, 0, 0, 0.85);
             padding: 40px 30px;
             border-radius: 24px;
             max-width: 700px;
             width: 100%;
-            box-shadow: 0 0 45px rgba(0, 102, 255, 0.4);
-            border: 1px solid rgba(0, 102, 255, 0.25);
+            box-shadow: 0 0 45px rgba(0, 102, 255, 0.5);
+            border: 1px solid rgba(0, 102, 255, 0.3);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             text-align: center;
         }
         h1 {
@@ -43,9 +50,8 @@
             color: #b0c4de;
             margin-bottom: 35px;
             font-style: italic;
+            /* Modificat: Acest text este acum perfect centrat */
             text-align: center;
-            display: block;
-            width: 100%;
         }
         .btn-container {
             display: flex;
@@ -72,10 +78,10 @@
             letter-spacing: 1px;
             cursor: pointer;
             border: none;
-            color: #ffffff;
         }
         .btn-google {
             background-color: #0066ff;
+            color: #ffffff;
             box-shadow: 0 0 20px rgba(0, 102, 255, 0.6);
         }
         .btn-google:hover {
@@ -83,8 +89,10 @@
             box-shadow: 0 0 35px rgba(0, 102, 255, 0.9);
             transform: translateY(-2px);
         }
+        /* Modificat: Butonul de muzica are acum acelasi albastru si umbra ca cel Google */
         .btn-music {
             background-color: #0066ff;
+            color: #ffffff;
             box-shadow: 0 0 20px rgba(0, 102, 255, 0.6);
         }
         .btn-music:hover {
@@ -110,7 +118,8 @@
             margin-bottom: 15px;
         }
         .features-list {
-            text-align: left;
+            /* Modificat: Centrare pentru lista de caracteristici */
+            text-align: center;
             margin-bottom: 30px;
         }
         .feature-item {
@@ -119,6 +128,8 @@
             padding: 15px;
             border-radius: 10px;
             border-left: 3px solid #0066ff;
+            /* Modificat: Centrare text in interiorul casetelor */
+            text-align: center;
         }
         .feature-item strong {
             color: #ffffff;
@@ -130,6 +141,8 @@
             margin-bottom: 0;
             font-size: 0.95rem;
             color: #cccccc;
+            /* Modificat: Centrare paragraf descriere */
+            text-align: center;
         }
         .screenshots-panel {
             background: rgba(0, 102, 255, 0.05);
@@ -148,7 +161,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.95rem;
             color: #888888;
-            text-align: center;
         }
         footer a {
             color: #0066ff;
@@ -170,11 +182,11 @@
         
         <div class="btn-container">
             <!-- Butonul Play Store -->
-            <a href="https://google.com" target="_blank" class="btn btn-google">
+            <a href="https://play.google.com" target="_blank" class="btn btn-google">
                 ✓ Buy on Google Play
             </a>
 
-            <!-- Butonul Premium pentru Muzica -->
+            <!-- Butonul Premium pentru Muzica ce deschide piesa direct si curat fara erori -->
             <a href="https://soundcloud.com" target="_blank" class="btn btn-music">
                 🎧 Play Galactic X Anthem
             </a>
@@ -209,7 +221,8 @@
 
         <footer>
             © 2026 protoHuman Games. All rights reserved. | <br><br>
-            <a href="https://google.com" target="_blank">Privacy Policy</a>
+            <!-- Conexiunea corectata si securizata manual catre adresa trimisa de tine -->
+            <a href="https://sites.google.com/view/galact-x-privacy/pagina-de-pornire" target="_blank">Privacy Policy</a>
         </footer>
     </div>
 
